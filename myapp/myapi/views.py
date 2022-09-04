@@ -5,7 +5,8 @@ from django.contrib.auth.password_validation import validate_password
 from .serializers import CartSerializer, ItemSerializer, UserSerializer
 from .models import User, Item, Cart
 from .permissions import UserPermission, ItemPermission, CartPermission
-
+from .render import PNGRenderer
+from rest_framework.renderers import JSONRenderer, BrowsableAPIRenderer
 # Create your views here.
 
 
@@ -34,6 +35,7 @@ class ItemViewSet(ModelViewSet):
     http_method_names = ['get', 'post', 'delete', 'put']
     serializer_class = ItemSerializer
     permission_classes = [ItemPermission]
+    renderer_classes = [BrowsableAPIRenderer, JSONRenderer, PNGRenderer]
 
 
 class CartViewSet(ModelViewSet):

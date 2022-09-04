@@ -54,7 +54,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'myapp.urls'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = 'http://127.0.0.1:8000/myapp/media/'
+MEDIA_URL = '/media/'
 
 
 TEMPLATES = [
